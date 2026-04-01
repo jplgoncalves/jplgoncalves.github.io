@@ -3,60 +3,78 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Gonçalves | Portfolio</title>
+    <title>João Gonçalves | Portfolio Técnico</title>
     <style>
-        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333; max-width: 800px; margin: 0 auto; padding: 20px; background-color: #f4f4f9; }
-        header { text-align: center; padding: 40px 0; background: #2c3e50; color: white; border-radius: 8px; margin-bottom: 20px; }
-        h1 { margin: 0; }
-        .container { background: white; padding: 30px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1); }
-        h2 { color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; }
-        .skill-tag { display: inline-block; background: #3498db; color: white; padding: 5px 15px; margin: 5px; border-radius: 20px; font-size: 0.9em; }
-        .project-card { border: 2px solid #3498db; padding: 20px; border-radius: 8px; margin: 20px 0; background: #f0f7ff; text-align: center; }
-        .btn { display: inline-block; background: #e74c3c; color: white; padding: 12px 25px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px; transition: 0.3s; }
-        .btn:hover { background: #c0392b; transform: scale(1.05); }
-        footer { text-align: center; margin-top: 40px; font-size: 0.8em; color: #777; }
-        ul { list-style-type: none; padding: 0; }
-        li { margin-bottom: 10px; padding-left: 20px; position: relative; }
-        li:before { content: "•"; color: #3498db; font-weight: bold; position: absolute; left: 0; }
+        :root { --primary: #2c3e50; --secondary: #3498db; --accent: #00ffff; --dark: #1a1a1a; --light: #f4f7f6; }
+        body { font-family: 'Segoe UI', Roboto, sans-serif; line-height: 1.6; color: #333; margin: 0; background: var(--light); }
+        header { background: var(--primary); color: white; padding: 60px 20px; text-align: center; border-bottom: 5px solid var(--secondary); }
+        h1 { margin: 0; font-size: 2.5em; letter-spacing: 1px; }
+        .subtitle { font-size: 1.2em; color: var(--accent); opacity: 0.9; }
+        .container { max-width: 900px; margin: -40px auto 40px; background: white; padding: 40px; border-radius: 12px; box-shadow: 0 15px 35px rgba(0,0,0,0.1); }
+        h2 { color: var(--primary); border-bottom: 2px solid var(--secondary); padding-bottom: 8px; margin-top: 30px; }
+        .skill-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 20px; margin-top: 20px; }
+        .skill-item { background: #eef2f3; padding: 15px; border-radius: 8px; border-left: 4px solid var(--secondary); }
+        .project-card { background: var(--dark); color: white; padding: 25px; border-radius: 10px; margin: 20px 0; transition: transform 0.3s; border: 1px solid #333; }
+        .project-card:hover { transform: translateY(-5px); border-color: var(--accent); }
+        .project-card h3 { color: var(--accent); margin-top: 0; }
+        .tag { background: var(--secondary); color: white; padding: 4px 10px; border-radius: 4px; font-size: 0.8em; margin-right: 5px; }
+        .btn { display: inline-block; background: var(--secondary); color: white; padding: 10px 20px; border-radius: 5px; text-decoration: none; font-weight: bold; margin-top: 15px; }
+        .btn:hover { background: #2980b9; }
+        footer { text-align: center; padding: 40px; color: #777; font-size: 0.9em; }
     </style>
 </head>
 <body>
 
 <header>
     <h1>João Gonçalves</h1>
-    <p>Técnico de Informática | Programador | Marketing Digital</p>
+    <p class="subtitle">Técnico de Informática | Programador </p>
 </header>
 
 <div class="container">
-    <h2>Sobre Mim</h2>
-    <p>Especialista técnico com qualificações de Nível 4 em Programação, Gestão de Redes e Marketing. Sou o criador da linguagem de programação <strong>Snakened</strong>, focada em simplicidade e inovação tecnológica.</p>
+    <h2>🎯 Perfil Profissional</h2>
+    <p>Especialista técnico com dupla certificação (Nível 4) em <b>Gestão de Redes</b> e <b>Programação</b>. Desenvolvedor focado em sistemas de baixo nível (Low-Level) e arquitetura de computadores. Criador da linguagem Snakened e do Micro-Kernel Gonix OS.</p>
+
+    <h2>🛠️ Stack Tecnológica</h2>
+    <div class="skill-grid">
+        <div class="skill-item">
+            <b>Sistemas & Low-Level</b><br>
+            C, Assembly x86, Kernels
+        </div>
+        <div class="skill-item">
+            <b>Redes & Infra</b><br>
+            Administração Linux, Cisco
+        </div>
+        <div class="skill-item">
+            <b>Desenvolvimento</b><br>
+            C++, HTML/CSS, Snakened
+        </div>
+    </div>
+
+    <h2>🚀 Projetos em Destaque</h2>
+    
+    <div class="project-card">
+        <h3>🛸 Gonix OS</h3>
+        <p>Um micro-kernel independente escrito do zero para arquitetura x86. Implementação de bootloader, gestão de memória VGA e suporte a interrupções.</p>
+        <div><span class="tag">C</span><span class="tag">Assembly</span><span class="tag">Bare Metal</span></div>
+        <a href="https://github.com/jplgoncalves/gonix" class="btn">Ver Código</a>
+    </div>
 
     <div class="project-card">
-        <h3>🐍 Linguagem Snakened</h3>
-        <p>Explora a documentação oficial, exemplos de código e o interpretador interativo.</p>
-        <a href="https://jplgoncalves.github.io/snakened" class="btn">Explorar Snakened →</a>
+        <h3>🐍 Snakened</h3>
+        <p>Linguagem de programação personalizada focada em processamento matemático e facilidade de interface.</p>
+        <div><span class="tag">Linguagens</span><span class="tag">Lógica</span></div>
+        <a href="#" class="btn">Saber Mais</a>
     </div>
 
-    <h2>Competências Técnicas</h2>
-    <div>
-        <span class="skill-tag">Python & Desenvolvimento de Linguagens</span>
-        <span class="skill-tag">Administração de Redes (LAN/WAN)</span>
-        <span class="skill-tag">Windows Server & Linux (Ubuntu)</span>
-        <span class="skill-tag">Adobe Photoshop & Canva (Avançado)</span>
-        <span class="skill-tag">Marketing & Relações Públicas</span>
-    </div>
-
-    <h2>Percurso Profissional</h2>
+    <h2>📜 Certificações</h2>
     <ul>
-        <li><strong>Marketing & Suporte Técnico:</strong> Experiência em WordPress e gestão de redes sociais na AJ Social Marketing.</li>
-        <li><strong>Logística e Gestão de Stocks:</strong> Operação de armazém na Auchan.</li>
-        <li><strong>Manutenção Informática:</strong> Diagnóstico de hardware e suporte na Escola Amato Lusitano.</li>
+        <li>Técnico de Gestão de Equipamentos Informáticos (Nível 4)</li>
+        <li>Especialização em Programação de Sistemas</li>
     </ul>
 </div>
 
 <footer>
-    <p>© 2026 João Gonçalves | Portugal</p>
-    <p>Contacto: goncalvesjpl@outlook.com</p>
+    &copy; 2026 João Gonçalves | "Transformando lógica em hardware funcional"
 </footer>
 
 </body>
