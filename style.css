@@ -1,4 +1,4 @@
-/* Fundo e Contentor Principal */
+/* Fundo e Contentor */
 body {
     background-color: #0d1117;
     color: #c9d1d9;
@@ -7,46 +7,32 @@ body {
 }
 
 .container {
-    max-width: 850px;
+    max-width: 800px;
     margin: 0 auto;
 }
 
-h2 {
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-/* Grelha de Projetos */
-.projects-grid {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-}
-
-/* O CARD (Onde a mágica acontece) */
+/* O Card com Alinhamento Horizontal */
 .project-card {
     background: #161b22;
     border: 1px solid #30363d;
-    border-radius: 10px;
-    display: flex;       /* Alinha imagem e texto lado a lado */
+    border-radius: 12px;
+    display: flex;       /* Coloca imagem ao lado do texto */
     align-items: center; /* Alinha verticalmente ao centro */
-    padding: 20px;
-    gap: 20px;           /* Espaço entre imagem e texto */
+    padding: 24px;
+    gap: 24px;           /* Espaço entre a imagem e o texto */
+    margin-bottom: 20px;
 }
 
-/* CONTROLO DAS IMAGENS (Não ficam 100%) */
+/* CONTROLO DAS IMAGENS (Para não ficarem gigantes) */
 .project-image {
-    width: 80px;          /* Define o tamanho pequeno */
-    height: 80px;         /* Mantém um quadrado */
-    min-width: 80px;      /* Garante que não encolhe */
-    object-fit: contain;  /* Não distorce o logo */
-    background: #0d1117;  /* Fundo para a imagem se for transparente */
-    border-radius: 8px;
-    flex-shrink: 0;       /* IMPORTANTE: impede que o texto empurre a imagem */
+    width: 80px;          /* Tamanho pequeno e fixo */
+    height: 80px;
+    min-width: 80px;      /* Impede a imagem de encolher */
+    object-fit: contain;  /* Mantém a proporção do logo */
+    flex-shrink: 0;       /* Garante que o texto não empurra a imagem */
 }
 
-/* Conteúdo de Texto */
+/* Conteúdo de Texto Alinhado à Esquerda */
 .project-info {
     display: flex;
     flex-direction: column;
@@ -54,25 +40,28 @@ h2 {
     text-align: left;
 }
 
-h3 { margin: 0 0 5px 0; color: #58a6ff; }
-p { margin: 0 0 15px 0; font-size: 0.9rem; color: #8b949e; }
+h3 { margin: 0 0 8px 0; color: #58a6ff; }
+p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; line-height: 1.5; }
 
-.tags { display: flex; gap: 8px; margin-bottom: 15px; }
+/* Tags e Botões */
+.tags { display: flex; gap: 8px; margin-bottom: 16px; }
 .tag {
     background: #21262d;
     border: 1px solid #30363d;
     color: #58a6ff;
-    padding: 2px 8px;
+    padding: 3px 10px;
     border-radius: 12px;
-    font-size: 0.7rem;
+    font-size: 0.75rem;
 }
 
 .btn {
     background: #238636;
     color: white;
     text-decoration: none;
-    padding: 6px 12px;
+    padding: 8px 16px;
     border-radius: 6px;
-    font-size: 0.8rem;
     font-weight: bold;
+    font-size: 0.85rem;
 }
+
+.btn:hover { background: #2ea043; }
