@@ -1,73 +1,80 @@
-/* Layout base */
+/* Garante que o fundo e o texto base fiquem corretos */
 body {
     background-color: #0d1117;
     color: #c9d1d9;
     font-family: -apple-system, system-ui, sans-serif;
-    padding: 40px 20px;
+    margin: 0;
+    padding: 20px;
 }
 
 .container {
-    max-width: 800px;
+    max-width: 900px;
     margin: 0 auto;
 }
 
-/* Título da secção */
-h2 {
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
-}
-
-/* Card de Projeto */
+/* Estilo do Card (Alinhamento Lado a Lado) */
 .project-card {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
-    display: flex;       /* Imagem e texto lado a lado */
+    display: flex;       /* Coloca a imagem à esquerda e o texto à direita */
     align-items: center; /* Alinha verticalmente ao centro */
-    padding: 24px;
-    gap: 24px;
+    padding: 20px;
+    gap: 20px;           /* Espaço entre a imagem e o texto */
     margin-bottom: 20px;
 }
 
-/* Controlo das Imagens (O segredo para não ficarem 100%) */
+/* CONTROLO DAS IMAGENS (Onde ajustas o tamanho) */
 .project-image {
-    width: 80px;          /* Largura fixa e pequena */
-    height: 80px;         /* Altura fixa */
-    min-width: 80px;      /* Impede que a imagem encolha */
-    object-fit: contain;  /* Mantém a proporção correta */
-    flex-shrink: 0;       /* Não deixa o texto empurrar a imagem */
+    width: 60px;          /* Define a largura pequena */
+    height: 60px;         /* Define a altura pequena */
+    min-width: 60px;      /* Impede que a imagem encolha se o texto for grande */
+    object-fit: contain;  /* Mantém a proporção do logo sem distorcer */
+    flex-shrink: 0;       /* Garante que o texto não "esmague" a imagem */
+    border-radius: 4px;
 }
 
-/* Bloco de Texto */
+/* Organização do Texto dentro do Card */
 .project-info {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-start; /* Alinha o texto à esquerda */
     text-align: left;
 }
 
-h3 { margin: 0 0 8px 0; color: #58a6ff; }
-p { margin: 0 0 16px 0; color: #8b949e; line-height: 1.5; }
-
-/* Tags */
-.tags { display: flex; gap: 8px; margin-bottom: 16px; }
-.tag {
-    background: #21262d;
-    border: 1px solid #30363d;
+h3 {
+    margin: 0 0 5px 0;
     color: #58a6ff;
-    padding: 3px 10px;
-    border-radius: 12px;
-    font-size: 0.75rem;
 }
 
-/* Botão */
+p {
+    margin: 0 0 10px 0;
+    font-size: 0.9rem;
+    color: #8b949e;
+}
+
+/* Tags e Botões */
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 12px;
+}
+
+.tag {
+    background: #21262d;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.7rem;
+}
+
 .btn {
-    background: #238636;
+    background-color: #238636;
     color: white;
     text-decoration: none;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 6px;
+    font-size: 0.8rem;
     font-weight: bold;
-    font-size: 0.85rem;
 }
