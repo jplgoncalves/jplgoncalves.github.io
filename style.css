@@ -1,88 +1,39 @@
-/* Reset básico para garantir que as margens não atrapalham */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  background-color: #0d1117; /* Fundo estilo GitHub Dark */
-  color: #c9d1d9;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
-  padding: 20px;
-}
-
-.container {
-  max-width: 900px;
-  margin: 0 auto; /* Centraliza o site na tela */
-}
-
-/* Alinhamento da Grelha de Projetos */
-.projects-grid {
-  display: flex;
-  flex-direction: column;
-  gap: 20px; /* Espaço entre os cards */
-  margin-top: 20px;
-}
-
-/* O Card Profissional */
+/* Ajuste do Card para suportar a imagem no topo */
 .project-card {
-  background-color: #161b22;
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start; /* GARANTE O ALINHAMENTO À ESQUERDA */
-  text-align: left;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    overflow: hidden; /* Garante que a imagem respeite o arredondamento do card */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.2s;
 }
 
-.header-row {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 12px;
+/* Estilo da Imagem */
+.project-image {
+    width: 100%;
+    height: 180px; /* Altura fixa para alinhar todos os cards igualmente */
+    object-fit: cover; /* Faz a imagem preencher o espaço sem distorcer */
+    border-bottom: 1px solid #30363d;
 }
 
-.header-row h3 {
-  color: #58a6ff;
-  font-size: 1.25rem;
+/* Padding apenas para o conteúdo de texto */
+.project-content {
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    flex-grow: 1;
 }
 
-.project-card p {
-  font-size: 0.95rem;
-  color: #8b949e;
-  margin-bottom: 16px;
-  line-height: 1.5;
+.project-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 10px;
 }
 
-/* Tags Minimalistas */
-.tags {
-  display: flex;
-  gap: 8px;
-  margin-bottom: 20px;
-}
-
-.tag {
-  background: #21262d;
-  border: 1px solid #30363d;
-  color: #58a6ff;
-  padding: 3px 10px;
-  border-radius: 12px;
-  font-size: 0.75rem;
-}
-
-/* Botão Alinhado */
-.btn {
-  background-color: #238636; /* Verde de sucesso do GitHub */
-  color: white;
-  text-decoration: none;
-  padding: 8px 16px;
-  border-radius: 6px;
-  font-size: 0.9rem;
-  font-weight: 600;
-}
-
-.btn:hover {
-  background-color: #2ea043;
+/* Manter os botões sempre na mesma linha no fundo */
+.btn-primary {
+    margin-top: auto; /* Empurra o botão para o fundo do card se o texto for curto */
 }
