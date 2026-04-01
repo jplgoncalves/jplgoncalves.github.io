@@ -1,40 +1,85 @@
-//* Configuração do Card Profissional e Alinhado */
+/* Layout Geral */
+.projects-container {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+/* O Card Profissional */
 .project-card {
-  background-color: #161b22; /* Fundo estilo GitHub Dark */
-  border: 1px solid #30363d;
-  border-radius: 8px;
-  padding: 24px;
-  margin-bottom: 20px;
-  
-  /* Sistema de Alinhamento Centralizado */
-  display: flex;
-  align-items: center; /* ALINHA TUDO VERTICALMENTE AO CENTRO */
-  gap: 20px; /* Espaço entre imagem e texto */
-  text-align: left;
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 12px;
+    display: flex;
+    align-items: center; /* Alinha imagem e texto verticalmente */
+    padding: 20px;
+    gap: 25px;
+    transition: 0.3s;
 }
 
-/* O Logo do Snakened (Mais Pequeno) */
-.project-logo {
-  height: 60px; /* Altere este valor para ficar maior ou menor */
-  width: auto; /* Mantém a proporção */
-  object-fit: contain;
-  flex-shrink: 0; /* Impede que o logo seja esmagado */
+.project-card:hover {
+    border-color: #58a6ff;
 }
 
-/* Contentor do Texto */
-.project-text-content {
-  flex-grow: 1; /* Faz o texto ocupar o espaço restante */
+/* Controle do Tamanho da Imagem/Logo */
+.project-visual {
+    width: 120px; /* Define a largura máxima do logo no card */
+    min-width: 120px;
+    display: flex;
+    justify-content: center;
 }
 
-.project-title {
-  color: #58a6ff;
-  font-size: 1.25rem;
-  margin: 0 0 8px 0;
+.project-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+/* Conteúdo de Texto */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinha texto à esquerda */
+    text-align: left;
+}
+
+.project-name {
+    color: #58a6ff;
+    margin: 0 0 10px 0;
+    font-size: 1.4rem;
 }
 
 .project-description {
-  font-size: 0.95rem;
-  color: #8b949e;
-  line-height: 1.5;
-  margin: 0;
+    color: #8b949e;
+    font-size: 0.95rem;
+    margin-bottom: 15px;
+}
+
+/* Tags e Botões */
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
+
+.tag {
+    background: #21262d;
+    color: #58a6ff;
+    border: 1px solid #30363d;
+    padding: 3px 10px;
+    border-radius: 20px;
+    font-size: 0.75rem;
+}
+
+.btn-action {
+    background: #238636;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
 }
