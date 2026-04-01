@@ -1,90 +1,40 @@
-/* Configurações Gerais */
-body {
-    background-color: #0d1117; /* Fundo escuro GitHub */
-    color: #c9d1d9;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-    padding: 40px;
+//* Configuração do Card Profissional e Alinhado */
+.project-card {
+  background-color: #161b22; /* Fundo estilo GitHub Dark */
+  border: 1px solid #30363d;
+  border-radius: 8px;
+  padding: 24px;
+  margin-bottom: 20px;
+  
+  /* Sistema de Alinhamento Centralizado */
+  display: flex;
+  align-items: center; /* ALINHA TUDO VERTICALMENTE AO CENTRO */
+  gap: 20px; /* Espaço entre imagem e texto */
+  text-align: left;
 }
 
-.projects-container {
-    max-width: 800px;
-    margin: 0 auto;
+/* O Logo do Snakened (Mais Pequeno) */
+.project-logo {
+  height: 60px; /* Altere este valor para ficar maior ou menor */
+  width: auto; /* Mantém a proporção */
+  object-fit: contain;
+  flex-shrink: 0; /* Impede que o logo seja esmagado */
 }
 
-.section-title {
-    color: #f0f6fc;
-    border-bottom: 1px solid #30363d;
-    padding-bottom: 10px;
-    margin-bottom: 30px;
+/* Contentor do Texto */
+.project-text-content {
+  flex-grow: 1; /* Faz o texto ocupar o espaço restante */
 }
 
-/* Lista de Projetos */
-.projects-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+.project-title {
+  color: #58a6ff;
+  font-size: 1.25rem;
+  margin: 0 0 8px 0;
 }
 
-.project-item {
-    background-color: #161b22;
-    border: 1px solid #30363d;
-    border-radius: 8px;
-    padding: 20px;
-    transition: 0.2s;
-}
-
-.project-item:hover {
-    border-color: #58a6ff;
-}
-
-.project-header {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    margin-bottom: 10px;
-}
-
-.project-header h3 {
-    margin: 0;
-    color: #58a6ff;
-    font-size: 1.4rem;
-}
-
-.project-item p {
-    color: #8b949e;
-    margin-bottom: 15px;
-}
-
-/* Tags */
-.tags {
-    display: flex;
-    gap: 8px;
-    margin-bottom: 20px;
-}
-
-.tag {
-    background: #21262d;
-    border: 1px solid #30363d;
-    color: #58a6ff;
-    padding: 2px 10px;
-    border-radius: 12px;
-    font-size: 0.8rem;
-    font-weight: 600;
-}
-
-/* Links/Botões Estilo Profissional */
-.project-link {
-    display: inline-block;
-    color: #238636; /* Verde GitHub */
-    text-decoration: none;
-    font-weight: bold;
-    border: 1px solid #238636;
-    padding: 5px 15px;
-    border-radius: 6px;
-    transition: 0.2s;
-}
-
-.project-link:hover {
-    background-color: #238636;
-    color: white;
+.project-description {
+  font-size: 0.95rem;
+  color: #8b949e;
+  line-height: 1.5;
+  margin: 0;
 }
