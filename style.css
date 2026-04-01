@@ -1,8 +1,8 @@
-/* Fundo e Contentor */
+/* Layout base */
 body {
     background-color: #0d1117;
     color: #c9d1d9;
-    font-family: -apple-system, sans-serif;
+    font-family: -apple-system, system-ui, sans-serif;
     padding: 40px 20px;
 }
 
@@ -11,28 +11,35 @@ body {
     margin: 0 auto;
 }
 
-/* O Card com Alinhamento Horizontal */
+/* Título da secção */
+h2 {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+}
+
+/* Card de Projeto */
 .project-card {
     background: #161b22;
     border: 1px solid #30363d;
     border-radius: 12px;
-    display: flex;       /* Coloca imagem ao lado do texto */
+    display: flex;       /* Imagem e texto lado a lado */
     align-items: center; /* Alinha verticalmente ao centro */
     padding: 24px;
-    gap: 24px;           /* Espaço entre a imagem e o texto */
+    gap: 24px;
     margin-bottom: 20px;
 }
 
-/* CONTROLO DAS IMAGENS (Para não ficarem gigantes) */
+/* Controlo das Imagens (O segredo para não ficarem 100%) */
 .project-image {
-    width: 80px;          /* Tamanho pequeno e fixo */
-    height: 80px;
-    min-width: 80px;      /* Impede a imagem de encolher */
-    object-fit: contain;  /* Mantém a proporção do logo */
-    flex-shrink: 0;       /* Garante que o texto não empurra a imagem */
+    width: 80px;          /* Largura fixa e pequena */
+    height: 80px;         /* Altura fixa */
+    min-width: 80px;      /* Impede que a imagem encolha */
+    object-fit: contain;  /* Mantém a proporção correta */
+    flex-shrink: 0;       /* Não deixa o texto empurrar a imagem */
 }
 
-/* Conteúdo de Texto Alinhado à Esquerda */
+/* Bloco de Texto */
 .project-info {
     display: flex;
     flex-direction: column;
@@ -41,9 +48,9 @@ body {
 }
 
 h3 { margin: 0 0 8px 0; color: #58a6ff; }
-p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; line-height: 1.5; }
+p { margin: 0 0 16px 0; color: #8b949e; line-height: 1.5; }
 
-/* Tags e Botões */
+/* Tags */
 .tags { display: flex; gap: 8px; margin-bottom: 16px; }
 .tag {
     background: #21262d;
@@ -54,6 +61,7 @@ p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; line-height: 1.5; }
     font-size: 0.75rem;
 }
 
+/* Botão */
 .btn {
     background: #238636;
     color: white;
@@ -63,5 +71,3 @@ p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; line-height: 1.5; }
     font-weight: bold;
     font-size: 0.85rem;
 }
-
-.btn:hover { background: #2ea043; }
