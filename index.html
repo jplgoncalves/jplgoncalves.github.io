@@ -4,74 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>JPL Goncalves | Portfólio</title>
-    
     <style>
-        /* CSS INTERNO PARA GARANTIR O DESIGN */
         body {
             background-color: #0d1117;
             color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, sans-serif;
             margin: 0;
             padding: 40px 20px;
         }
-
-        .container {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        h2 {
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-            color: #f0f6fc;
-        }
-
-        .projects-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 20px;
-        }
-
+        .container { max-width: 800px; margin: 0 auto; }
+        h2 { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 30px; }
+        
+        .projects-grid { display: flex; flex-direction: column; gap: 20px; }
+        
         .project-card {
             background: #161b22;
             border: 1px solid #30363d;
             border-radius: 12px;
             display: flex;
             align-items: center;
-            padding: 20px;
+            padding: 24px;
             gap: 20px;
         }
 
-        /* O COMANDO QUE OBRIGA AS IMAGENS A FICAREM PEQUENAS */
         .project-image {
-            width: 70px !important;
-            height: 70px !important;
-            min-width: 70px !important;
-            max-width: 70px !important;
+            width: 60px !important;
+            height: 60px !important;
+            min-width: 60px !important;
             object-fit: contain !important;
             flex-shrink: 0 !important;
-            border-radius: 8px;
         }
 
-        .project-info {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-        }
-
-        h3 { margin: 0 0 5px 0; color: #58a6ff; }
-        p { margin: 0 0 15px 0; font-size: 0.9rem; color: #8b949e; }
-
-        .tags { display: flex; gap: 8px; margin-bottom: 15px; }
+        .project-info { display: flex; flex-direction: column; text-align: left; }
+        h3 { margin: 0 0 8px 0; color: #58a6ff; font-size: 1.2rem; }
+        p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; }
+        
+        .tags { display: flex; gap: 8px; margin-bottom: 16px; }
         .tag {
             background: #21262d;
             border: 1px solid #30363d;
             color: #58a6ff;
-            padding: 2px 8px;
+            padding: 3px 10px;
             border-radius: 12px;
-            font-size: 0.7rem;
+            font-size: 0.75rem;
         }
 
         .btn {
@@ -81,8 +56,11 @@
             padding: 8px 16px;
             border-radius: 6px;
             font-weight: bold;
-            font-size: 0.8rem;
+            font-size: 0.85rem;
+            display: inline-block;
+            width: fit-content;
         }
+        .btn:hover { background: #2ea043; }
     </style>
 </head>
 <body>
@@ -92,6 +70,32 @@
 
         <div class="projects-grid">
             <article class="project-card">
-                <img src="logo_gonix-os_semfundo.png" alt="Gonix OS" class="project-image">
+                <img src="logo_gonix-os_semfundo.png" alt="Gonix" class="project-image">
                 <div class="project-info">
                     <h3>Gonix OS</h3>
+                    <p>Micro-kernel independente (x86) com bootloader e gestão VGA.</p>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Assembly</span>
+                    </div>
+                    <a href="https://github.com/jplgoncalves" class="btn">Ver Código</a>
+                </div>
+            </article>
+
+            <article class="project-card">
+                <img src="logolang-snakened.png" alt="Snakened" class="project-image">
+                <div class="project-info">
+                    <h3>Snakened</h3>
+                    <p>Linguagem de programação focada em processamento matemático.</p>
+                    <div class="tags">
+                        <span class="tag">Linguagens</span>
+                        <span class="tag">Lógica</span>
+                    </div>
+                    <a href="https://jplgoncalves.github.io/snakened" class="btn">Explorar Projeto</a>
+                </div>
+            </article>
+        </div>
+    </div>
+
+</body>
+</html>
