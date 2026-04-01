@@ -5,28 +5,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>João Goncalves | Portfólio</title>
     <style>
+        /* CONFIGURAÇÃO GERAL E FUNDO */
+        * { box-sizing: border-box; }
         body {
             background-color: #0d1117;
             color: #c9d1d9;
-            font-family: -apple-system, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
             margin: 0;
             padding: 40px 20px;
         }
         .container { max-width: 800px; margin: 0 auto; }
-        
-        /* Secção Sobre / Resumo */
-        .about-section {
+
+        /* NOVO CABEÇALHO: NOME E FOTO LADO A LADO */
+        .profile-header {
+            display: flex;
+            align-items: center; /* Centraliza verticalmente */
+            justify-content: space-between; /* Texto à esquerda, foto à direita */
+            gap: 30px;
             margin-bottom: 50px;
             text-align: left;
         }
-        .about-section h1 { color: #f0f6fc; margin-bottom: 10px; }
+
+        /* Lado do Texto (Nome e Resumo) */
+        .header-text { flex: 1; }
+        .header-text h1 { color: #f0f6fc; margin: 0 0 10px 0; font-size: 2.5rem; }
         .about-text { 
             font-size: 1.1rem; 
             line-height: 1.6; 
             color: #8b949e; 
-            margin-bottom: 20px; 
+            margin-bottom: 25px; 
         }
 
+        /* Lado da Foto de Perfil */
+        .profile-image-container {
+            width: 150px;
+            height: 150px;
+            min-width: 150px; /* Garante que não encolhe */
+            border-radius: 50%; /* Faz a foto ficar redonda */
+            overflow: hidden; /* Esconde o que sai do círculo */
+            border: 3px solid #30363d; /* Um contorno sutil */
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+        }
+        .profile-image-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Ajusta a imagem sem distorcer */
+        }
+
+        /* SECÇÃO DE PROJETOS */
         h2 { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 30px; color: #f0f6fc; }
         
         .projects-grid { display: flex; flex-direction: column; gap: 20px; }
@@ -39,9 +65,9 @@
             align-items: center;
             padding: 24px;
             gap: 20px;
-            margin-bottom: 10px;
         }
 
+        /* OBRIGA AS IMAGENS DO PROJETO A SEREM PEQUENAS */
         .project-image {
             width: 60px !important;
             height: 60px !important;
@@ -50,10 +76,11 @@
             flex-shrink: 0 !important;
         }
 
-        .project-info { display: flex; flex-direction: column; }
+        .project-info { display: flex; flex-direction: column; text-align: left; }
         h3 { margin: 0 0 8px 0; color: #58a6ff; font-size: 1.2rem; }
         p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; }
         
+        .tags { display: flex; gap: 8px; margin-bottom: 16px; }
         .tag {
             background: #21262d;
             border: 1px solid #30363d;
@@ -61,10 +88,9 @@
             padding: 3px 10px;
             border-radius: 12px;
             font-size: 0.75rem;
-            margin-right: 5px;
         }
 
-        /* Botões */
+        /* BOTÕES */
         .btn {
             background: #238636;
             color: white;
@@ -74,49 +100,62 @@
             font-weight: bold;
             font-size: 0.85rem;
             display: inline-block;
+            width: fit-content;
         }
         .btn-cv {
             background: #21262d;
             border: 1px solid #30363d;
             color: #c9d1d9;
         }
-        .btn:hover { opacity: 0.8; }
+        .btn:hover { background: #2ea043; }
+        .btn-cv:hover { border-color: #58a6ff; color: #58a6ff; background: transparent; }
+
     </style>
 </head>
 <body>
 
     <div class="container">
-        <section class="about-section">
-            <h1>João Gonçalves</h1>
-            <p class="about-text">
-                Desenvolvedor focado em sistemas de baixo nível e linguagens de programação. 
-                Atualmente a trabalhar no <strong>Gonix OS</strong> e na linguagem <strong>Snakened</strong>. 
-                Interessado em arquitetura de software, kernels e otimização.
-            </p>
-            <a href="teu-cv.pdf" target="_blank" class="btn btn-cv">📄 Ver meu CV (PDF)</a>
-        </section>
+        <header class="profile-header">
+            <div class="header-text">
+                <h1>João Gonçalves</h1>
+                <p class="about-text">
+                    Desenvolvedor focado em sistemas de baixo nível e linguagens de programação. 
+                    Atualmente a trabalhar no <strong>Gonix OS</strong> e na linguagem <strong>Snakened</strong>. 
+                    Interessado em arquitetura de software, kernels e otimização.
+                </p>
+                <a href="teu-cv.pdf" target="_blank" class="btn btn-cv">📄 Ver meu CV (PDF)</a>
+            </div>
+            
+            <div class="profile-image-container">
+                <img src="cv_img.png" alt="Foto de João Gonçalves">
+            </div>
+        </header>
 
         <h2>Projetos em Destaque</h2>
 
         <div class="projects-grid">
             <article class="project-card">
-                <img src="logo_gonix-os_semfundo.png" class="project-image">
+                <img src="logo_gonix-os_semfundo.png" alt="Gonix" class="project-image">
                 <div class="project-info">
                     <h3>Gonix OS</h3>
                     <p>Micro-kernel independente (x86) com bootloader e gestão VGA.</p>
-                    <div><span class="tag">C</span><span class="tag">Assembly</span></div>
-                    <br>
+                    <div class="tags">
+                        <span class="tag">C</span>
+                        <span class="tag">Assembly</span>
+                    </div>
                     <a href="https://github.com/jplgoncalves" class="btn">Ver Código</a>
                 </div>
             </article>
 
             <article class="project-card">
-                <img src="logolang-snakened.png" class="project-image">
+                <img src="logolang-snakened.png" alt="Snakened" class="project-image">
                 <div class="project-info">
                     <h3>Snakened</h3>
                     <p>Linguagem de programação focada em processamento matemático.</p>
-                    <div><span class="tag">Linguagens</span><span class="tag">Lógica</span></div>
-                    <br>
+                    <div class="tags">
+                        <span class="tag">Linguagens</span>
+                        <span class="tag">Lógica</span>
+                    </div>
                     <a href="https://jplgoncalves.github.io/snakened" class="btn">Explorar Projeto</a>
                 </div>
             </article>
