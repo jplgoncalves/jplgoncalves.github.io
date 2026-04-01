@@ -1,131 +1,98 @@
-<!DOCTYPE html>
-<html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JPL Goncalves | Portfólio</title>
-    <style>
-        /* Estilo Profissional Integrado */
-        body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-            margin: 0;
-            padding: 40px 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-        }
+/* Reset e Fundo */
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+    margin: 0;
+    padding: 40px 20px;
+}
 
-        .container {
-            max-width: 900px;
-            width: 100%;
-        }
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+}
 
-        h2 {
-            border-bottom: 1px solid #30363d;
-            padding-bottom: 10px;
-            margin-bottom: 30px;
-        }
+/* Título da Secção */
+h2 {
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 1.5rem;
+}
 
-        .projects-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 24px;
-        }
+/* Grid de Projetos */
+.projects-grid {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
 
-        /* Card Alinhado */
-        .project-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            padding: 24px;
-            gap: 20px;
-            transition: 0.3s;
-        }
+/* Card Profissional */
+.project-card {
+    background: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 10px;
+    display: flex; /* Alinha imagem e texto lado a lado */
+    align-items: center; 
+    padding: 20px;
+    gap: 25px;
+    transition: transform 0.2s;
+}
 
-        .project-card:hover { border-color: #58a6ff; }
+.project-card:hover {
+    border-color: #58a6ff;
+}
 
-        /* Imagem/Logo Pequena */
-        .project-logo {
-            width: 100px;
-            height: 100px;
-            object-fit: contain;
-            flex-shrink: 0;
-            background: #0d1117;
-            border-radius: 8px;
-        }
+/* CONTROLO DAS IMAGENS (Onde estava o problema) */
+.project-image {
+    width: 100px;         /* Tamanho fixo e pequeno */
+    height: 100px;
+    min-width: 100px;     /* Impede que a imagem encolha */
+    object-fit: contain;  /* Mantém a proporção do logo */
+    border-radius: 8px;
+}
 
-        .project-content {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-start;
-            text-align: left;
-        }
+/* Conteúdo de Texto */
+.project-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Força alinhamento à esquerda */
+    text-align: left;
+}
 
-        h3 { margin: 0 0 8px 0; color: #58a6ff; }
-        p { margin: 0 0 16px 0; color: #8b949e; line-height: 1.5; }
+h3 {
+    margin: 0 0 8px 0;
+    color: #58a6ff;
+}
 
-        /* Tags */
-        .tags { display: flex; gap: 8px; margin-bottom: 16px; }
-        .tag {
-            background: #21262d;
-            color: #58a6ff;
-            border: 1px solid #30363d;
-            padding: 3px 10px;
-            border-radius: 12px;
-            font-size: 0.75rem;
-            font-weight: bold;
-        }
+p {
+    margin: 0 0 15px 0;
+    font-size: 0.95rem;
+    color: #8b949e;
+}
 
-        /* Botão Verde GitHub */
-        .btn {
-            background-color: #238636;
-            color: white;
-            text-decoration: none;
-            padding: 8px 16px;
-            border-radius: 6px;
-            font-size: 0.85rem;
-            font-weight: bold;
-        }
-        .btn:hover { background-color: #2ea043; }
-    </style>
-</head>
-<body>
+/* Tags e Botões */
+.tags {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 15px;
+}
 
-<div class="container">
-    <h2>🚀 Projetos em Destaque</h2>
+.tag {
+    background: #21262d;
+    border: 1px solid #30363d;
+    color: #58a6ff;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
 
-    <div class="projects-grid">
-        <article class="project-card">
-            <img src="img/gonix-logo.png" alt="Gonix" class="project-logo">
-            <div class="project-content">
-                <h3>Gonix OS</h3>
-                <p>Micro-kernel independente (x86) com bootloader próprio e gestão de memória VGA.</p>
-                <div class="tags">
-                    <span class="tag">C</span>
-                    <span class="tag">Assembly</span>
-                </div>
-                <a href="#" class="btn">Ver Código</a>
-            </div>
-        </article>
-
-        <article class="project-card">
-            <img src="snakened/logo.png" alt="Snakened" class="project-logo">
-            <div class="project-content">
-                <h3>Snakened</h3>
-                <p>Linguagem de programação personalizada focada em processamento matemático.</p>
-                <div class="tags">
-                    <span class="tag">Linguagens</span>
-                    <span class="tag">Lógica</span>
-                </div>
-                <a href="https://jplgoncalves.github.io/snakened" class="btn">Explorar Projeto</a>
-            </div>
-        </article>
-    </div>
-</div>
-
-</body>
-</html>
+.btn {
+    background-color: #238636;
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 0.85rem;
+}
