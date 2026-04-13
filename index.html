@@ -3,168 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Goncalves | Portfólio</title>
+    <title>João Gonçalves - Portefólio</title>
     <style>
-        /* CONFIGURAÇÃO GERAL E FUNDO */
-        * { box-sizing: border-box; }
+        :root {
+            --bg-color: #0d1117;
+            --card-bg: #161b22;
+            --text-color: #c9d1d9;
+            --text-muted: #8b949e;
+            --primary-blue: #58a6ff;
+            --tag-bg: #1f2937;
+            --tag-text: #8b949e;
+            --btn-green: #238636;
+            --btn-green-hover: #2ea043;
+            --border-color: #30363d;
+        }
+
         body {
-            background-color: #0d1117;
-            color: #c9d1d9;
-            font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             margin: 0;
-            padding: 40px 20px;
-        }
-        .container { max-width: 800px; margin: 0 auto; }
-
-        /* NOVO CABEÇALHO: NOME E FOTO LADO A LADO */
-        .profile-header {
+            padding: 2rem;
             display: flex;
-            align-items: center; /* Centraliza verticalmente */
-            justify-content: space-between; /* Texto à esquerda, foto à direita */
-            gap: 30px;
-            margin-bottom: 50px;
-            text-align: left;
+            justify-content: center;
         }
 
-        /* Lado do Texto (Nome e Resumo) */
-        .header-text { flex: 1; }
-        .header-text h1 { color: #f0f6fc; margin: 0 0 10px 0; font-size: 2.5rem; }
-        .about-text { 
-            font-size: 1.1rem; 
-            line-height: 1.6; 
-            color: #8b949e; 
-            margin-bottom: 25px; 
-        }
-
-        /* Lado da Foto de Perfil */
-        .profile-image-container {
-            width: 150px;
-            height: 150px;
-            min-width: 150px; /* Garante que não encolhe */
-            border-radius: 50%; /* Faz a foto ficar redonda */
-            overflow: hidden; /* Esconde o que sai do círculo */
-            border: 3px solid #30363d; /* Um contorno sutil */
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
-        }
-        .profile-image-container img {
+        .container {
+            max-width: 800px;
             width: 100%;
-            height: 100%;
-            object-fit: cover; /* Ajusta a imagem sem distorcer */
         }
 
-        /* SECÇÃO DE PROJETOS */
-        h2 { border-bottom: 1px solid #30363d; padding-bottom: 10px; margin-bottom: 30px; color: #f0f6fc; }
-        
-        .projects-grid { display: flex; flex-direction: column; gap: 20px; }
-        
-        .project-card {
-            background: #161b22;
-            border: 1px solid #30363d;
-            border-radius: 12px;
+        /* HEADER & FOTO REFORMULADA */
+        .header {
             display: flex;
             align-items: center;
-            padding: 24px;
-            gap: 20px;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            gap: 2rem;
         }
 
-        /* OBRIGA AS IMAGENS DO PROJETO A SEREM PEQUENAS */
-        .project-image {
-            width: 60px !important;
-            height: 60px !important;
-            min-width: 60px !important;
-            object-fit: contain !important;
-            flex-shrink: 0 !important;
+        .header-content {
+            flex: 1;
         }
 
-        .project-info { display: flex; flex-direction: column; text-align: left; }
-        h3 { margin: 0 0 8px 0; color: #58a6ff; font-size: 1.2rem; }
-        p { margin: 0 0 16px 0; font-size: 0.95rem; color: #8b949e; }
-        
-        .tags { display: flex; gap: 8px; margin-bottom: 16px; }
-        .tag {
-            background: #21262d;
-            border: 1px solid #30363d;
-            color: #58a6ff;
-            padding: 3px 10px;
+        .profile-pic-container {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            border: 2px solid var(--border-color);
+            overflow: hidden; /* Garante que a imagem fica no círculo */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: var(--card-bg); /* Fundo caso a imagem falhe */
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+        }
+
+        .profile-pic {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* ESSENCIAL: Enquadra e centraliza a foto automaticamente */
+            display: block;
+        }
+
+        h1 { margin: 0 0 0.5rem 0; font-size: 2.5rem; }
+        .bio { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
+        strong { color: #f0f6fc; }
+
+        /* PROJETOS */
+        h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; }
+
+        .project-card {
+            background-color: var(--card-bg);
+            border: 1px solid var(--border-color);
             border-radius: 12px;
-            font-size: 0.75rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 1rem;
+            align-items: flex-start;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+
+        /* CARD ESPECIAL PARA O ORBITALSAT (COM VÍDEO) */
+        .project-card.with-video {
+            flex-direction: column; /* Vídeo por baixo do texto */
+        }
+
+        .project-icon { width: 32px; height: 32px; flex-shrink: 0; margin-top: 4px; }
+        .project-info { flex: 1; }
+        .project-title { color: var(--primary-blue); margin: 0 0 0.25rem 0; text-decoration: none; font-size: 1.25rem; font-weight: 600; }
+        .project-desc { color: var(--text-muted); margin: 0 0 1rem 0; font-size: 0.95rem; line-height: 1.5; }
+        
+        .tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
+        .tag { background-color: var(--tag-bg); color: var(--tag-text); padding: 4px 10px; border-radius: 2rem; font-size: 0.75rem; font-weight: 500; }
+
+        .project-video {
+            width: 100%;
+            border-radius: 8px;
+            border: 1px solid var(--border-color);
+            margin-top: 1rem;
+            margin-bottom: 1rem;
         }
 
         /* BOTÕES */
         .btn {
-            background: #238636;
-            color: white;
-            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
             padding: 8px 16px;
             border-radius: 6px;
-            font-weight: bold;
-            font-size: 0.85rem;
-            display: inline-block;
-            width: fit-content;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-decoration: none;
+            transition: background-color 0.2s;
+            cursor: pointer;
+            border: none;
         }
-        .btn-cv {
-            background: #21262d;
-            border: 1px solid #30363d;
-            color: #c9d1d9;
-        }
-        .btn:hover { background: #2ea043; }
-        .btn-cv:hover { border-color: #58a6ff; color: #58a6ff; background: transparent; }
 
+        .btn-green { background-color: var(--btn-green); color: white; }
+        .btn-green:hover { background-color: var(--btn-green-hover); }
+
+        .btn-secondary { background-color: #21262d; color: var(--text-color); border: 1px solid var(--border-color); }
+        .btn-secondary:hover { background-color: #30363d; }
+
+        /* FOOTER */
+        .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+        
+        /* RESPONSIVIDADE */
+        @media (max-width: 600px) {
+            .header { flex-direction: column-reverse; text-align: center; gap: 1rem; }
+            .profile-pic-container { width: 120px; height: 120px; }
+            .project-card { flex-direction: column; align-items: center; text-align: center; }
+            .tags { justify-content: center; }
+        }
     </style>
 </head>
 <body>
 
     <div class="container">
-        <header class="profile-header">
-            <div class="header-text">
+        
+        <div class="header">
+            <div class="header-content">
                 <h1>João Gonçalves</h1>
-                <p class="about-text">
+                <p class="bio">
                     Formado em programação, com foco em sistemas de baixo nível de computação e linguagens de programação. 
-                    Atualmente estou a trabalhar no <strong>Gonix OS</strong> e na linguagem de programação<strong>Snakened</strong>. 
+                    Atualmente estou a trabalhar no <strong>Gonix OS</strong> e na linguagem de programação <strong>Snakened</strong>. 
                     Interessado em arquitetura de software, kernels e otimização.
                 </p>
-           <a href="cv-joao-goncalves.pdf" download="CV_Joao_Goncalves.pdf" class="btn btn-cv">📄 Baixar meu CV (PDF)</a>
+                <a href="path/to/your/CV.pdf" class="btn btn-secondary" target="_blank">📄 Baixar meu CV (PDF)</a>
             </div>
             
-            <div class="profile-image-container">
-                <img src="cv_img.png" alt="Foto de João Gonçalves">
+            <div class="profile-pic-container">
+                <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/jgoncalves_profile_pic.png" alt="João Gonçalves" class="profile-pic">
             </div>
-        </header>
+        </div>
 
         <h2>Projetos em Destaque</h2>
 
-        <div class="projects-grid">
-            <article class="project-card">
-                <img src="logo_gonix-os_semfundo.png" alt="Gonix" class="project-image">
+        <div class="project-card with-video">
+            <div style="display: flex; gap: 1rem; align-items: flex-start;">
+                <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/orbitalsatlogo.png" alt="OrbitalSat Logo" class="project-icon">
                 <div class="project-info">
-                    <h3>Gonix OS</h3>
-                    <p>Micro-kernel independente (x86) com bootloader e gestão VGA.</p>
+                    <h3 class="project-title">OrbitalSat: Simulador LEO</h3>
+                    <p class="project-desc">Simulador dinâmico de órbitas de baixa altitude (LEO) em ambiente MATLAB. O sistema renderiza a Terra em 3D e calcula o footprint (cobertura) do sensor do satélite em tempo real.</p>
+                    
                     <div class="tags">
-                        <span class="tag">C</span>
-                        <span class="tag">Assembly</span>
+                        <span class="tag">MATLAB</span>
+                        <span class="tag">Simulação</span>
+                        <span class="tag">Aeroespacial</span>
+                        <span class="tag">Geometria</span>
                     </div>
-                    <a href="https://github.com/jplgoncalves/gonix" class="btn">Ver Código</a>
                 </div>
-            </article>
+            </div>
 
-            <article class="project-card">
-                <img src="logolang-snakened.png" alt="Snakened" class="project-image">
-                <div class="project-info">
-                    <h3>Snakened</h3>
-                    <p>Linguagem de programação focada em processamento matemático.</p>
-                    <div class="tags">
-                        <span class="tag">Linguagens</span>
-                        <span class="tag">Lógica</span>
-                    </div>
-                    <a href="https://jplgoncalves.github.io/snakened" class="btn">Explorar Projeto</a>
-                </div>
-            </article>
+            <video class="project-video" controls poster="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/orbitalsatlogo.png">
+                <source src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/VID-20260413-WA0005_1.mp4" type="video/mp4">
+                O seu navegador não suporta a visualização de vídeos.
+            </video>
+
+            <a href="https://github.com/jplgoncalves/orbitalsat" class="btn btn-green" target="_blank">Explorar Simulador</a>
         </div>
+
+        <div class="project-card">
+            <img src="path/to/gonix_icon.png" alt="Gonix OS" class="project-icon">
+            <div class="project-info">
+                <h3 class="project-title">Gonix OS</h3>
+                <p class="project-desc">Micro-kernel independente (x86) com bootloader e gestão VGA.</p>
+                
+                <div class="tags">
+                    <span class="tag">C</span>
+                    <span class="tag">Assembly</span>
+                </div>
+                <a href="#" class="btn btn-green">Ver Código</a>
+            </div>
+        </div>
+
+        <div class="project-card">
+            <img src="path/to/snakened_icon.png" alt="Snakened" class="project-icon">
+            <div class="project-info">
+                <h3 class="project-title">Snakened</h3>
+                <p class="project-desc">Linguagem de programação focada em processamento matemático.</p>
+                
+                <div class="tags">
+                    <span class="tag">Linguagens</span>
+                    <span class="tag">Lógica</span>
+                </div>
+                <a href="#" class="btn btn-green">Explorar Projeto</a>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p>© 2026 João Gonçalves, <a href="mailto:goncalves@outlook.com" style="color: var(--text-muted); text-decoration: none;">goncalves@outlook.com</a></p>
+        </div>
+
     </div>
-    <center>
-     <footer class="py-10 text-center text-slate-500 border-t border-slate-800">
-        <p>&copy; 2026 João Gonçalves, goncalves@outlook.com</p>
-    </footer>
-    </center>
+
 </body>
 </html>
