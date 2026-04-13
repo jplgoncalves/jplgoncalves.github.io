@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>João Gonçalves - Portefólio</title>
+    <title>João Gonçalves - Portefólio Refinado</title>
     <style>
         :root {
             --bg-color: #0d1117;
@@ -33,13 +33,13 @@
             width: 100%;
         }
 
-        /* HEADER & FOTO REFORMULADA */
+        /* HEADER & FOTO REFORMULADA E ENQUADRADA */
         .header {
             display: flex;
             align-items: center;
             justify-content: space-between;
             margin-bottom: 3rem;
-            gap: 2rem;
+            gap: 2.5rem; /* Mais espaço entre texto e foto */
         }
 
         .header-content {
@@ -47,16 +47,17 @@
         }
 
         .profile-pic-container {
-            width: 160px;
-            height: 160px;
+            width: 170px; /* Foto ligeiramente maior */
+            height: 170px;
             border-radius: 50%;
-            border: 2px solid var(--border-color);
+            border: 3px solid var(--border-color); /* Borda mais definida */
             overflow: hidden; /* Garante que a imagem fica no círculo */
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: var(--card-bg); /* Fundo caso a imagem falhe */
-            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.4); /* Sombra mais forte */
+            flex-shrink: 0; /* Impede que o círculo encolha */
         }
 
         .profile-pic {
@@ -66,54 +67,47 @@
             display: block;
         }
 
-        h1 { margin: 0 0 0.5rem 0; font-size: 2.5rem; }
-        .bio { color: var(--text-muted); line-height: 1.6; margin-bottom: 1.5rem; }
+        h1 { margin: 0 0 0.5rem 0; font-size: 2.7rem; } /* Título maior */
+        .bio { color: var(--text-muted); line-height: 1.7; margin-bottom: 1.8rem; font-size: 1.05rem; }
         strong { color: #f0f6fc; }
 
         /* PROJETOS */
-        h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.5rem; margin-top: 3rem; }
+        h2 { border-bottom: 1px solid var(--border-color); padding-bottom: 0.6rem; margin-top: 3.5rem; font-size: 1.8rem; }
 
         .project-card {
             background-color: var(--card-bg);
             border: 1px solid var(--border-color);
             border-radius: 12px;
-            padding: 1.5rem;
-            margin-bottom: 1.5rem;
+            padding: 1.8rem;
+            margin-bottom: 1.8rem;
             display: flex;
-            gap: 1rem;
+            gap: 1.2rem;
             align-items: flex-start;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            box-shadow: 0 3px 8px rgba(0,0,0,0.15);
+            transition: transform 0.2s, box-shadow 0.2s;
         }
 
-        /* CARD ESPECIAL PARA O ORBITALSAT (COM VÍDEO) */
-        .project-card.with-video {
-            flex-direction: column; /* Vídeo por baixo do texto */
+        .project-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0,0,0,0.2);
         }
 
-        .project-icon { width: 32px; height: 32px; flex-shrink: 0; margin-top: 4px; }
+        .project-icon { width: 36px; height: 36px; flex-shrink: 0; margin-top: 5px; }
         .project-info { flex: 1; }
-        .project-title { color: var(--primary-blue); margin: 0 0 0.25rem 0; text-decoration: none; font-size: 1.25rem; font-weight: 600; }
-        .project-desc { color: var(--text-muted); margin: 0 0 1rem 0; font-size: 0.95rem; line-height: 1.5; }
+        .project-title { color: var(--primary-blue); margin: 0 0 0.3rem 0; text-decoration: none; font-size: 1.3rem; font-weight: 600; display: block; }
+        .project-desc { color: var(--text-muted); margin: 0 0 1.2rem 0; font-size: 0.98rem; line-height: 1.6; }
         
-        .tags { display: flex; gap: 0.5rem; margin-bottom: 1rem; flex-wrap: wrap; }
-        .tag { background-color: var(--tag-bg); color: var(--tag-text); padding: 4px 10px; border-radius: 2rem; font-size: 0.75rem; font-weight: 500; }
-
-        .project-video {
-            width: 100%;
-            border-radius: 8px;
-            border: 1px solid var(--border-color);
-            margin-top: 1rem;
-            margin-bottom: 1rem;
-        }
+        .tags { display: flex; gap: 0.6rem; margin-bottom: 1.2rem; flex-wrap: wrap; }
+        .tag { background-color: var(--tag-bg); color: var(--tag-text); padding: 5px 12px; border-radius: 2rem; font-size: 0.78rem; font-weight: 500; }
 
         /* BOTÕES */
         .btn {
             display: inline-flex;
             align-items: center;
-            padding: 8px 16px;
+            padding: 9px 18px;
             border-radius: 6px;
             font-weight: 600;
-            font-size: 0.9rem;
+            font-size: 0.92rem;
             text-decoration: none;
             transition: background-color 0.2s;
             cursor: pointer;
@@ -127,12 +121,12 @@
         .btn-secondary:hover { background-color: #30363d; }
 
         /* FOOTER */
-        .footer { text-align: center; color: var(--text-muted); font-size: 0.85rem; margin-top: 4rem; padding-top: 1rem; border-top: 1px solid var(--border-color); }
+        .footer { text-align: center; color: var(--text-muted); font-size: 0.88rem; margin-top: 4.5rem; padding-top: 1.2rem; border-top: 1px solid var(--border-color); }
         
         /* RESPONSIVIDADE */
-        @media (max-width: 600px) {
-            .header { flex-direction: column-reverse; text-align: center; gap: 1rem; }
-            .profile-pic-container { width: 120px; height: 120px; }
+        @media (max-width: 650px) {
+            .header { flex-direction: column-reverse; text-align: center; gap: 1.5rem; }
+            .profile-pic-container { width: 140px; height: 140px; margin-top: 1rem; }
             .project-card { flex-direction: column; align-items: center; text-align: center; }
             .tags { justify-content: center; }
         }
@@ -150,44 +144,37 @@
                     Atualmente estou a trabalhar no <strong>Gonix OS</strong> e na linguagem de programação <strong>Snakened</strong>. 
                     Interessado em arquitetura de software, kernels e otimização.
                 </p>
-                <a href="path/to/your/CV.pdf" class="btn btn-secondary" target="_blank">📄 Baixar meu CV (PDF)</a>
+                <a href="path/to/your/cv-joao-goncalves.pdf" class="btn btn-secondary" target="_blank">📄 Ver CV (PDF)</a>
             </div>
             
             <div class="profile-pic-container">
-                <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/jgoncalves_profile_pic.png" alt="João Gonçalves" class="profile-pic">
+                <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/jgoncalves_profile_pic_clear.png" alt="João Gonçalves" class="profile-pic">
             </div>
         </div>
 
         <h2>Projetos em Destaque</h2>
 
-        <div class="project-card with-video">
-            <div style="display: flex; gap: 1rem; align-items: flex-start;">
-                <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/orbitalsatlogo.png" alt="OrbitalSat Logo" class="project-icon">
-                <div class="project-info">
-                    <h3 class="project-title">OrbitalSat: Simulador LEO</h3>
-                    <p class="project-desc">Simulador dinâmico de órbitas de baixa altitude (LEO) em ambiente MATLAB. O sistema renderiza a Terra em 3D e calcula o footprint (cobertura) do sensor do satélite em tempo real.</p>
-                    
-                    <div class="tags">
-                        <span class="tag">MATLAB</span>
-                        <span class="tag">Simulação</span>
-                        <span class="tag">Aeroespacial</span>
-                        <span class="tag">Geometria</span>
-                    </div>
+        <div class="project-card">
+            <img src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/orbitalsatlogo.png" alt="OrbitalSat Logo" class="project-icon">
+            <div class="project-info">
+                <a href="https://github.com/jplgoncalves/orbitalsat" class="project-title" target="_blank">OrbitalSat: Simulador LEO</a>
+                <p class="project-desc">Simulador dinâmico de órbitas de baixa altitude (LEO) em ambiente MATLAB. O sistema renderiza a Terra em 3D e calcula o footprint (cobertura) do sensor do satélite em tempo real.</p>
+                
+                <div class="tags">
+                    <span class="tag">MATLAB</span>
+                    <span class="tag">Simulação</span>
+                    <span class="tag">Aeroespacial</span>
+                    <span class="tag">Geometria</span>
                 </div>
+                
+                <a href="https://github.com/jplgoncalves/orbitalsat" class="btn btn-green" target="_blank">Explorar Simulador</a>
             </div>
-
-            <video class="project-video" controls poster="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/orbitalsatlogo.png">
-                <source src="https://raw.githubusercontent.com/jplgoncalves/orbitalsat/main/VID-20260413-WA0005_1.mp4" type="video/mp4">
-                O seu navegador não suporta a visualização de vídeos.
-            </video>
-
-            <a href="https://github.com/jplgoncalves/orbitalsat" class="btn btn-green" target="_blank">Explorar Simulador</a>
         </div>
 
         <div class="project-card">
             <img src="path/to/gonix_icon.png" alt="Gonix OS" class="project-icon">
             <div class="project-info">
-                <h3 class="project-title">Gonix OS</h3>
+                <a href="#" class="project-title">Gonix OS</a>
                 <p class="project-desc">Micro-kernel independente (x86) com bootloader e gestão VGA.</p>
                 
                 <div class="tags">
@@ -201,7 +188,7 @@
         <div class="project-card">
             <img src="path/to/snakened_icon.png" alt="Snakened" class="project-icon">
             <div class="project-info">
-                <h3 class="project-title">Snakened</h3>
+                <a href="#" class="project-title">Snakened</a>
                 <p class="project-desc">Linguagem de programação focada em processamento matemático.</p>
                 
                 <div class="tags">
