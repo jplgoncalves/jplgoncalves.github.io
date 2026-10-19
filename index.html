@@ -581,9 +581,78 @@
             color: var(--muted) !important;
         }
 
+        /* Certificações e formação */
+
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 17px;
+        }
+
+        .cert-card {
+            display: flex;
+            flex-direction: column;
+            min-width: 0;
+            padding: 23px;
+            background: linear-gradient(145deg, #101720, #0c1117);
+            border: 1px solid var(--border);
+            border-radius: 9px;
+        }
+
+        .cert-card h3 {
+            margin: 12px 0 8px;
+            font-size: 16px;
+            line-height: 1.45;
+        }
+
+        .cert-card p {
+            color: var(--muted);
+            font-size: 13px;
+            line-height: 1.75;
+            margin-bottom: 16px;
+        }
+
+        .cert-meta {
+            color: var(--cyan);
+            font-family: var(--font-code);
+            font-size: 10px;
+            text-transform: uppercase;
+            letter-spacing: .04em;
+        }
+
+        .cert-status {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-top: auto;
+            padding: 5px 8px;
+            border: 1px solid #65572b;
+            border-radius: 4px;
+            color: var(--yellow);
+            background: rgb(245 215 110 / 5%);
+            font-family: var(--font-code);
+            font-size: 10px;
+        }
+
+        .cert-note {
+            margin-top: 18px;
+            padding: 16px 18px;
+            border-left: 3px solid var(--green);
+            background: rgb(69 230 154 / 5%);
+            color: var(--muted);
+            font-size: 13px;
+        }
+
+        .cert-note a {
+            color: var(--green);
+        }
+
         /* Responsividade */
 
         @media (max-width: 700px) {
+            .cert-grid {
+                grid-template-columns: 1fr;
+            }
+
             .nav-inner {
                 padding: 14px 0;
                 align-items: flex-start;
@@ -668,6 +737,7 @@
                 <a href="#sobre">./sobre</a>
                 <a href="#projetos">./projetos</a>
                 <a href="#tecnologias">./stack</a>
+                <a href="#certificacoes">./certificacoes</a>
                 <a href="#contacto">./contacto</a>
             </div>
         </div>
@@ -1083,12 +1153,79 @@
             </div>
         </section>
 
+
+        <!-- Certificações e formação profissional -->
+        <section class="section" id="certificacoes">
+            <div class="container">
+                <div class="section-heading">
+                    <div>
+                        <p class="section-kicker">03 // CERTIFICATIONS & LEARNING</p>
+                        <h2>Certificações e formação profissional</h2>
+                        <p class="section-description">
+                            Formação complementar relacionada com tecnologia,
+                            cibersegurança e desenvolvimento profissional.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="cert-grid">
+                    <article class="cert-card">
+                        <span class="cert-meta">Cibersegurança</span>
+                        <h3>Cidadão Ciberseguro</h3>
+                        <p>Referência de formação associada ao Centro Nacional de Cibersegurança (CNCS).</p>
+                        <span class="cert-status">Credencial e data por confirmar</span>
+                    </article>
+
+                    <article class="cert-card">
+                        <span class="cert-meta">Segurança da informação</span>
+                        <h3>Informação Classificada</h3>
+                        <p>Formação/referência associada ao Gabinete Nacional de Segurança (GNS); título oficial por confirmar.</p>
+                        <span class="cert-status">Credencial e data por confirmar</span>
+                    </article>
+
+                    <article class="cert-card">
+                        <span class="cert-meta">Empreendedorismo</span>
+                        <h3>Empreendedorismo Tecnológico</h3>
+                        <p>Referência de formação associada à Porto Business School.</p>
+                        <span class="cert-status">Conclusão e data por confirmar</span>
+                    </article>
+
+                    <article class="cert-card">
+                        <span class="cert-meta">Informática</span>
+                        <h3>CS50</h3>
+                        <p>Percurso de aprendizagem em ciência da computação; não apresentado como concluído.</p>
+                        <span class="cert-status">Estado por confirmar</span>
+                    </article>
+
+                    <article class="cert-card">
+                        <span class="cert-meta">Cloud / Microsoft</span>
+                        <h3>Azure Fundamentals (AZ-900)</h3>
+                        <p>Área de certificação Microsoft referida no teu percurso; a aprovação no exame não foi confirmada.</p>
+                        <span class="cert-status">Certificação por confirmar</span>
+                    </article>
+
+                    <article class="cert-card">
+                        <span class="cert-meta">Ciência e tecnologia</span>
+                        <h3>Formação / recursos NASA</h3>
+                        <p>Referência a recursos ou atividades de aprendizagem; falta identificar o curso e eventual credencial.</p>
+                        <span class="cert-status">Título por identificar</span>
+                    </article>
+                </div>
+
+                <div class="cert-note">
+                    <strong>Nota de rigor:</strong> os itens acima foram incluídos a partir de referências anteriores, mas os dados públicos disponíveis não permitem confirmar todos os títulos oficiais, datas, conclusão ou ligações de validação. Por isso, estão assinalados como pendentes e não como certificados verificados. Consulta o
+                    <a href="https://www.linkedin.com/in/jplgoncalves/" target="_blank" rel="noopener noreferrer">perfil LinkedIn</a>
+                    para completar os dados corretos.
+                </div>
+            </div>
+        </section>
+
         <!-- Contacto -->
         <section class="section" id="contacto">
             <div class="container">
                 <div class="contact-panel">
 
-                    <p class="section-kicker">03 // GET IN TOUCH</p>
+                    <p class="section-kicker">04 // GET IN TOUCH</p>
                     <h2>Vamos falar de tecnologia?</h2>
 
                     <p>
